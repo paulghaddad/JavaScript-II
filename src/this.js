@@ -17,7 +17,7 @@ class User {
 
   checkPassword(password) {
     return this.password === password;
-  };
+  }
 }
 
 const me = new User({
@@ -54,6 +54,6 @@ process.stdout.write(`Using .call: ${checkPassword.call(me, 'correcthorsebattery
 process.stdout.write(`Using .apply: ${checkPassword.apply(me, ['correcthorsebatterystaple'])}\n`);
 
 // .bind
-var boundCheckPassword = checkPassword.bind(me);
+const boundCheckPassword = checkPassword.bind(me);
 
 process.stdout.write(`Using .bind: ${boundCheckPassword('correcthorsebatterystaple')}\n`);
